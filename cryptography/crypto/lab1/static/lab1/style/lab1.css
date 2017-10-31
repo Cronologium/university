@@ -1,0 +1,23 @@
+#encryption-error {
+    border: solid 1px black;
+    color: red;
+}
+
+#decryption-error {
+    border: solid 1px black;
+    color: red;
+}
+
+#encryption-output {
+    border: solid 1px black;
+}
+
+#decryption-output {
+    border: solid 1px black;
+}
+
+body {
+    width: 720px;
+    margin: auto;
+    margin-top: 50px;
+}

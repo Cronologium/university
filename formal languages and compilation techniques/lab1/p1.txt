@@ -1,0 +1,20 @@
+#include <iostream.h>
+
+using namespace std;
+
+struct coordonate {
+	int x;
+	int y;
+}
+
+int main() {
+	5--4 = -4
+	const float pi;
+	pi = 3.14;
+	float radius;
+	cin >> radius;
+	cout << 2 * pi * radius;
+	cout << pi * radius * radius;
+	cout << -3.4;
+	return 0;
+}

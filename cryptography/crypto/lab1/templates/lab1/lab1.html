@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    <script type="text/javascript" src="{% static 'lab1/script/jquery-3.2.1.min.js' %}"></script>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'lab1/script/lab1.js' %}"></script>
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'lab1/style/lab1.css' %}" />
+    
+    
+    <meta charset="UTF-8">
+    <title>Lab 1 - Belaso</title>
+</head>
+<body>
+    <div>
+        <label>
+            Alphabet:
+        </label>
+        <input id="alphabet">
+    </div>
+    <br>
+    <div>
+        <form id="encryption-form">
+            {% csrf_token %}
+            <label>
+                Data to encrypt
+            </label>
+            <input type="text" id="encryption-data">
+            <br>
+            <label> Encryption key</label>
+            <input type="text" id="encryption-key">
+            <br>
+        </form>
+        <input type="submit" id="do-encryption" value="Encrypt!">
+        <br>
+        <label>
+            Output
+        </label>
+        <p id="encryption-output">
+        </p>
+        <label>
+            Errors
+        </label>
+        <p id = "encryption-error">
+        </p>
+    </div>
+    <br>
+    <div>
+        <form id="decryption-form">
+            {% csrf_token %}
+            <label>
+                Data to decrypt
+            </label>
+            <input type="text" id="decryption-data">
+            <br>
+            <label>
+                Decryption key
+            </label>
+            <input type="text" id="decryption-key">
+            <br>
+        </form>
+        <input type="submit" id="do-decryption" value="Decrypt">
+        <br>
+        <label>
+            Output
+        </label>
+        <p id="decryption-output">
+            
+        </p>
+        <label>
+            Errors
+        </label>
+        <p id = "decryption-error">
+        </p>
+    </div>
+</body>
+</html>

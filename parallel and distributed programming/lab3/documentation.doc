@@ -1,0 +1,12 @@
+﻿
+Threads
+All modern operating systems support concurrency both via processes and threads. Processes are instances of programs which typically run independent to each other, e.g. if you start a java program the operating system spawns a new process which runs in parallel to other programs. Inside those processes we can utilize threads to execute code concurrently, so we can make the most out of the available cores of the CPU.
+Java supports Threads since JDK 1.0. Before starting a new thread you have to specify the code to be executed by this thread, often called the task. This is done by implementing Runnable - a functional interface defining a single void no-args method run()
+
+Executors 
+The Concurrency API introduces the concept of an ExecutorService as a higher level replacement for working with threads directly. Executors are capable of running asynchronous tasks and typically manage a pool of threads, so we don't have to create new threads manually. All threads of the internal pool will be reused under the hood for revenant tasks, so we can run as many concurrent tasks as we want throughout the life-cycle of our application with a single executor service.
+Callables and Futures
+In addition to Runnable executors support another kind of task named Callable. Callables are functional interfaces just like runnables but instead of being void they return a value.
+
+
+

@@ -1,0 +1,107 @@
+
+Special notations:
+! -> empty sequence
+$ -> a sequence name follows
+` -> esthetic, replaces the space in the documentation, but specifies that there is no space where it is located
+
+
+1. Language Specification
+	1.1 Alphabet:
+		1.1.a Upper and lower case letters from the english alphabet (A-Z a-z)
+		1.1.b Underline character and dot: "." "_"
+		1.1.c Digits 0-9
+	1.2. Lexic:
+		1.2.a Special symbols:
+			- operators: +, -, /, *, <, >, <=, =, >=, ==, .
+			- separators: (), [], {}, ;, space, ",
+			- reserved words: int, float, string, list, cin, cout, if, while, const, char, else, using, namespace, std, #include, <iostream.h>
+		1.2.b Identifiers:
+			- a sequence of letters and digits, first character being a letter, rules:
+				identifier -> letter|identifier letter|identifier digit 
+				digit -> "0"|"1"|"2"| ... |"9"
+				letter -> "a"|"b"|"c"| ... |"z"|"A"|"B"|"C"|...|"Z"		
+		1.2.c Constants:
+			1. numerical:
+				number -> nonzerodigit|number digit
+				nonzerodigit -> "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"
+				constint -> "+"number|number|"-"number|0
+			2. float:
+				float -> int"."digit|float digit
+				constfloat -> "+"float|float|"-"float
+			3. character:
+				constchar -> "'"character"'"
+				character -> letter|digit
+			4. constant
+				constant -> int|float|char
+2. Syntax
+	program -> directive structsdef "int main() {"statementlist "return 0;}"
+	directive -> "#include <iostream.h> using namespace std;"
+	structsdef -> userdefinedtype;|structsdef userdefined type
+	statementlist -> statement";"|statement";"statementlist;
+	statement-> assignment|if|while|output|input
+	blockcode -> "{"statementlist"}"|statement
+	2.1. Assignment:
+		simpletype -> "int"|"char"|"float"
+		specialprefix -> "const"
+		type -> simpletype|specialprefix simpletype|datatype
+		assignment -> identifier"="expression
+		declaration -> type identifier|type identifier"="expression
+		term -> constchar|constint|constfloat|identifier|identifier"."identifier
+		operator -> "+"|"-"|"/"|"*"|"<"|">"|"<="|"="|">="|"=="
+		expression -> term operator expression|term
+	2.2 Conditional:
+		if -> "if (" expression ")" blockcode "else" blockcode
+	2.3 Loop:
+		while -> "while (" expression ")" blockcode
+	2.4 Print:
+		output -> "cout" "<<" (expression)|output "<<" expression
+	2.5 Read:
+		input -> "cin" ">>" identifier|input ">>" identifier
+	2.6 User defined data type
+		userdefinedtype -> datatype "}"
+		datatype -> "struct" structname "{" type fieldname |datatype";"type fieldname
+		structname -> letter|structname letter
+		fieldname -> letter|fieldname letter digit
+
+Token type | code
+
+identifier 	0
+constant 	1
+int 		2
+float 		3
+char 		4
+cin 		5 
+cout 		6
+if 			7
+while 		8
+else 		9
++ 			10
+- 			11
+/ 			12
+* 			13
+< 			14
+> 			15
+<= 			16
+>= 			17
+= 			18
+== 			19
+{ 			20
+} 			21
+; 			22
+. 			23
+( 			24
+) 			25
+>> 			26
+<< 			27
+struct      28
+function	29
+directive 	30
+return		31
+include		32
+using		33
+namespace 	34
+std 		35
+const 		36
+
+
+
