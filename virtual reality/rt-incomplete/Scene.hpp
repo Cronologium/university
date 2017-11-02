@@ -6,9 +6,9 @@ using namespace rt;
 
 int geometryCount = 7;
 
-#define USE_LIGHT
-#define USE_DIFFUSE
-#define USE_SPECULAR
+//#define USE_LIGHT
+//#define USE_DIFFUSE
+//#define USE_SPECULAR
 
 Geometry* scene[] = {
     #ifdef USE_LIGHT
