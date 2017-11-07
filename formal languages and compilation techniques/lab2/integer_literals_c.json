@@ -1,5 +1,5 @@
 {
-  "alphabet": "0123456789abcdefghijklmnopqrstuvwxyzABCDEF.XLU",
+  "alphabet": "0123456789abcdefghijklmnopqrstuvwxyzABCDEF.X+-",
   "states": [
     {"label": "signum", "start": true, "end": false, "transitions":
       [
@@ -66,8 +66,7 @@
     {"label": "deci0", "start": false, "end": true, "transitions":
       [
         {"elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "new_state": "deci0"},
-        {"elements": ["."], "new_state": "frac0"},
-        {"elements": ["ull", "ULL", "ll", "LL", "l", "L", "ul", "UL", "u", "U"], "new_state": "omega"}
+        {"elements": ["."], "new_state": "frac0"}
       ]
     },
 

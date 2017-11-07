@@ -1,5 +1,5 @@
-from finite_automata_json_parser import FiniteAutomataJsonParser
-from finite_automata_keyboard_parser import FiniteAutomataKeyboardParser
+from finiteautomata.finite_automata_json_parser import FiniteAutomataJsonParser
+
 
 def compare_test(test_no, expected_value, actual_value, verbose=False, inp=None):
     if expected_value != actual_value:
@@ -7,7 +7,7 @@ def compare_test(test_no, expected_value, actual_value, verbose=False, inp=None)
     elif verbose:
         print 'Test %d OK! (%s -> %s)' % (test_no, inp, expected_value)
 
-def main():
+def validate_automata():
     parser = FiniteAutomataJsonParser()
     #parser = FiniteAutomataKeyboardParser()
     finite_automata = parser.parse("integer_literals_c.json")
@@ -40,6 +40,9 @@ def main():
     for x in xrange(len(tests)):
         result = finite_automata.longest_prefix(tests[x][0])
         compare_test(x, tests[x][1], result, verbose=True, inp=tests[x][0])
+
+def main():
+    validate_automata()
 
 if __name__ == '__main__':
     main()
