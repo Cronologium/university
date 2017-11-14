@@ -17,14 +17,19 @@ import java.util.Map;
  * @author normenhansen
  */
 public class Main extends SimpleApplication {
-
+    private Boolean liftLeft;
+    private Integer framesLeft;
+    
     public static void main(String[] args) {
         Main app = new Main();
         app.start();
+        
     }
 
     @Override
     public void simpleInitApp() {
+        this.liftLeft = Boolean.FALSE;
+        this.framesLeft = 30;
         Map<String, Material> materials = new HashMap<>(); 
         materials.put("body", new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md")); //BODY
         materials.put("head", new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md")); //HEAD
@@ -289,14 +294,14 @@ public class Main extends SimpleApplication {
         bodyNode.attachChild(rightShoulderNode);
         bodyNode.attachChild(abdomenNode);
         
-        abdomenNode.rotate(.0f, .0f, .0f);
-        neckNode.rotate(.0f, .0f, -.0f);
+        //abdomenNode.rotate(.0f, .0f, .0f);
+        //neckNode.rotate(.0f, .0f, -.0f);
         
-        rightUpperLegNode.rotate(.0f, .0f, .0f);
-        leftUpperLegNode.rotate(.0f, .0f, .0f);
+        //rightUpperLegNode.rotate(.0f, .0f, .0f);
+        //leftUpperLegNode.rotate(.0f, .0f, .0f);
         
-        rightLowerLegNode.rotate(1.0f, .0f, .0f);
-        leftLowerLegNode.rotate(-1.0f, .0f, .0f);
+        //rightLowerLegNode.rotate(1.0f, .0f, .0f);
+        //leftLowerLegNode.rotate(-1.0f, .0f, .0f);
         
         
         rootNode.attachChild(bodyNode);
@@ -306,6 +311,28 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleUpdate(float tpf) {
         //TODO: add update code
+        Float multiplier = 0.3f;
+        if (this.liftLeft)
+        {
+            multiplier *= -1f;
+        }
+        rootNode.getChild("abdomen").rotate(.0f, multiplier * 0.0125f, .0f);
+        rootNode.getChild("neck").rotate(.0f, .0f, multiplier * 0.03f);
+        
+        rootNode.getChild("leftUpperLeg").rotate(multiplier * 0.1f, 0, 0);
+        rootNode.getChild("leftLowerLeg").rotate(-multiplier * 0.05f, 0, 0);
+        rootNode.getChild("rightUpperLeg").rotate(-multiplier * 0.1f, 0, 0);
+        rootNode.getChild("rightLowerLeg").rotate(multiplier * 0.05f, 0, 0);
+        
+        rootNode.getChild("rightUpperArm").rotate(multiplier * 0.05f, 0, 0);
+        rootNode.getChild("rightElbow").rotate(-multiplier * 0.025f, 0, 0);
+        rootNode.getChild("leftUpperArm").rotate(-multiplier * 0.05f, 0, 0);
+        rootNode.getChild("leftElbow").rotate(multiplier * 0.025f, 0, 0);
+        this.framesLeft -= 1;
+        if (this.framesLeft == 0) {
+            this.liftLeft = !this.liftLeft;
+            this.framesLeft = 60;
+        }
     }
 
     @Override
