@@ -324,9 +324,9 @@ public class Main extends SimpleApplication {
         rootNode.getChild("rightUpperLeg").rotate(-multiplier * 0.1f, 0, 0);
         rootNode.getChild("rightLowerLeg").rotate(multiplier * 0.05f, 0, 0);
         
-        rootNode.getChild("rightUpperArm").rotate(multiplier * 0.05f, 0, 0);
+        rootNode.getChild("rightShoulder").rotate(multiplier * 0.05f, 0, 0);
         rootNode.getChild("rightElbow").rotate(-multiplier * 0.025f, 0, 0);
-        rootNode.getChild("leftUpperArm").rotate(-multiplier * 0.05f, 0, 0);
+        rootNode.getChild("leftShoulder").rotate(-multiplier * 0.05f, 0, 0);
         rootNode.getChild("leftElbow").rotate(multiplier * 0.025f, 0, 0);
         this.framesLeft -= 1;
         if (this.framesLeft == 0) {
