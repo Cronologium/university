@@ -1,4 +1,7 @@
+import sys
+
 from finiteautomata.finite_automata_json_parser import FiniteAutomataJsonParser
+from scanner.scanner import Scanner
 
 
 def compare_test(test_no, expected_value, actual_value, verbose=False, inp=None):
@@ -38,11 +41,30 @@ def validate_automata():
     ]
 
     for x in xrange(len(tests)):
-        result = finite_automata.longest_prefix(tests[x][0])
+        result, invalid = finite_automata.longest_prefix(tests[x][0])
         compare_test(x, tests[x][1], result, verbose=True, inp=tests[x][0])
 
-def main():
-    validate_automata()
+def main(args):
+    fa_parser = FiniteAutomataJsonParser()
+    identifiers_automata = fa_parser.parse("identifiers.json")
+    constants_automata = fa_parser.parse("constants.json")
+
+    scanner = Scanner(
+        identifiers_automata=identifiers_automata,
+        constants_automata=constants_automata
+    )
+    tokens, symbol_table, str_tokens = scanner.lexical_validation(open(args[1], 'r').read())
+    open(args[2], 'w').write('pif: ' + str(str_tokens) + '\nsym: ' + str(symbol_table) + '\n')
+
 
 if __name__ == '__main__':
-    main()
+    '''
+    sys.stdout.write('[')
+    for elem in list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        sys.stdout.write('"\'' + elem + '\'", ')
+    sys.stdout.write('\b]\n')
+    '''
+    if len(sys.argv) < 3:
+        print 'Usage %s <file> <output>'
+    else:
+        main(sys.argv)

@@ -1,0 +1,83 @@
+{
+  "alphabet": "+-0123456789.abcdefgihjklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'",
+  "states":
+  [
+    {
+      "label": "char0", "start": true, "end": false, "transitions":
+      [
+        {
+          "elements": ["'a'", "'b'", "'c'", "'d'", "'e'", "'f'", "'g'", "'h'", "'i'", "'j'", "'k'", "'l'", "'m'", "'n'", "'o'", "'p'", "'q'", "'r'", "'s'", "'t'", "'u'", "'v'", "'w'", "'x'", "'y'", "'z'", "'A'", "'B'", "'C'", "'D'", "'E'", "'F'", "'G'", "'H'", "'I'", "'J'", "'K'", "'L'", "'M'", "'N'", "'O'", "'P'", "'Q'", "'R'", "'S'", "'T'", "'U'", "'V'", "'W'", "'X'", "'Y'", "'Z'", "'0'", "'1'", "'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'", "'9'"],
+          "new_state": "omega"
+        }
+      ]
+    },
+    {
+      "label": "signum", "start": true, "end": false, "transitions":
+      [
+        {
+          "elements": ["+", "-"],
+          "new_state": "deci0"
+        }
+      ]
+    },
+    {
+      "label": "deci0", "start": true, "end": false, "transitions":
+      [
+        {
+          "elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          "new_state": "deci1"
+        },
+        {
+          "elements": ["0."],
+          "new_state": "frac0"
+        }
+      ]
+    },
+    {
+      "label": "deci1", "start": false, "end": true, "transitions":
+      [
+        {
+          "elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          "new_state": "deci1"
+        },
+        {
+          "elements": ["."],
+          "new_state": "frac0"
+        }
+      ]
+    },
+    {
+      "label": "deci2", "start": true, "end": false, "transitions":
+      [
+        {
+          "elements": ["0"],
+          "new_state": "omega"
+        }
+      ]
+    }
+    {
+      "label": "frac0", "start": false, "end": false, "transitions":
+      [
+        {
+          "elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          "new_state": "frac1"
+        }
+      ]
+    },
+    {
+      "label": "frac1", "start": false, "end": true, "transitions":
+      [
+        {
+          "elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          "new_state": "frac1"
+        }
+      ]
+    },
+    {
+      "label": "omega", "start": false, "end": true, "transitions":
+      [
+
+      ]
+    }
+  ]
+}

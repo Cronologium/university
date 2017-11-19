@@ -57,11 +57,14 @@ class FiniteAutomata:
     def longest_prefix(self, text, start_pos=0):
         q = [(None, '', start_pos)]
         longest_prefix = ''
+        longest_invalid_prefix = ''
         while len(q):
             crt_state = q[0]
             pos = crt_state[2]
             if crt_state[0] and crt_state[0].end_state and len(crt_state[1]) > len(longest_prefix):
                 longest_prefix = crt_state[1]
+            if crt_state[0] and len(crt_state[1]) > len(longest_invalid_prefix):
+                longest_invalid_prefix = crt_state[1]
             if len(q) > 1:
                 q = q[1:]
             else:
@@ -77,7 +80,7 @@ class FiniteAutomata:
                     for elem in transition.elements:
                         if text[pos : pos + len(elem)] == elem:
                             q.append((self.states[transition.new_state], crt_state[1] + elem, pos + len(elem)))
-        return longest_prefix
+        return longest_prefix, longest_invalid_prefix
 
     def get_alphabet(self):
         return str(self.alphabet)
