@@ -54,7 +54,7 @@
           "new_state": "omega"
         }
       ]
-    }
+    },
     {
       "label": "frac0", "start": false, "end": false, "transitions":
       [

@@ -191,7 +191,7 @@ class Scanner:
         if it is not :         (False, error_message)
         """
         pos_init = pos
-        validated_text, raw_text = self.identifiers_automata.longest_prefix(text, pos)
+        validated_text = self.identifiers_automata.longest_prefix(text, pos)
         if validated_text == '':
             return False, 'Invalid character'
         if len(validated_text) >= 250:
@@ -222,7 +222,7 @@ class Scanner:
             return False, 'Not a unary operator'
         if text[pos] == '0' and text[pos+1] in digits:
             return False, 'Cannot have 0 and then another digit after it'
-        validated_text, raw_text = self.constants_automata.longest_prefix(text, pos)
+        validated_text = self.constants_automata.longest_prefix(text, pos)
         if text[pos + len(validated_text)] in letters:
             return False, 'Cannot have letters at the end of a constant'
         if validated_text == '':

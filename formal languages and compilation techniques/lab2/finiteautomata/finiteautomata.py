@@ -80,7 +80,7 @@ class FiniteAutomata:
                     for elem in transition.elements:
                         if text[pos : pos + len(elem)] == elem:
                             q.append((self.states[transition.new_state], crt_state[1] + elem, pos + len(elem)))
-        return longest_prefix, longest_invalid_prefix
+        return longest_prefix
 
     def get_alphabet(self):
         return str(self.alphabet)
