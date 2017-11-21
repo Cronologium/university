@@ -9,8 +9,11 @@ namespace Connector {
         public void communicate(System.IAsyncResult ar){
             Socket socket = ((Socket)((Object[])ar.AsyncState)[0]);
             String uri = ((String)((Object[])ar.AsyncState)[1]);
+            
+            var ip = ((System.Net.IPEndPoint) socket.RemoteEndPoint).Address.ToString();
 
-            byte[] message = Encoding.ASCII.GetBytes("GET " + uri + " HTTP/1.1\r\n");
+            byte[] message = Encoding.ASCII.GetBytes("GET " + uri + " HTTP/1.1\r\nHost:" + ip +
+                             "\r\nConnection: keep-alive\r\nAccept: text/html\r\nUser-Agent: CSharpTests\r\n\r\n");
             Console.WriteLine("Mesage to send: {0}", Encoding.ASCII.GetString(message));
             IAsyncResult asyncSendResult = socket.BeginSend(message, 0, message.Length, SocketFlags.None, null, null);
             while(!asyncSendResult.IsCompleted) {
@@ -23,7 +26,7 @@ namespace Connector {
                 Thread.Sleep(1000);
             }
             socket.EndReceive(asyncReceiveResult);
-            Console.WriteLine("Result({1}): {0}", Encoding.ASCII.GetString(file), Encoding.ASCII.GetString(file).Length);
+            Console.WriteLine("Result: {0}", Encoding.ASCII.GetString(file));
             socket.EndConnect(ar);
         }
         public IAsyncResult asyncFetch(string host, int port, string uri) {

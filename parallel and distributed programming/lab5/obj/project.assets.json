@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tudor/uni/university/parallel and distributed programming/lab5/lab5.csproj",
+      "projectUniqueName": "/home/tudor/uni/an 3/git/university/parallel and distributed programming/lab5/lab5.csproj",
       "projectName": "lab5",
-      "projectPath": "/home/tudor/uni/university/parallel and distributed programming/lab5/lab5.csproj",
+      "projectPath": "/home/tudor/uni/an 3/git/university/parallel and distributed programming/lab5/lab5.csproj",
       "packagesPath": "/home/tudor/.nuget/packages/",
-      "outputPath": "/home/tudor/uni/university/parallel and distributed programming/lab5/obj/",
+      "outputPath": "/home/tudor/uni/an 3/git/university/parallel and distributed programming/lab5/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

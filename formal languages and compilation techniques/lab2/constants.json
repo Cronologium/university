@@ -59,17 +59,12 @@
       "label": "frac0", "start": false, "end": false, "transitions":
       [
         {
-          "elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-          "new_state": "frac1"
-        }
-      ]
-    },
-    {
-      "label": "frac1", "start": false, "end": true, "transitions":
-      [
-        {
           "elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-          "new_state": "frac1"
+          "new_state": "frac0"
+        },
+        {
+          "elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+          "new_state": "omega"
         }
       ]
     },
