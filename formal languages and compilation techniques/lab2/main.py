@@ -23,25 +23,22 @@ def validate_automata():
         print 'Transitions', finite_automata.get_all_transitions()
 
     tests = [
-        ("0x09", "0x0"),
+        ("0x09", "0x09"),
         ("0x123456078900", "0x123456078900"),
         ("0012346", "0"),
         ("1234056", "1234056"),
         ("0467", "0467"),
         ("004", "0"),
         ("0647945", "0647"),
-        ("0b001", "0b0"),
+        ("0b001", "0b001"),
         ("0b1010101000", "0b1010101000"),
         ("0b1", "0b1"),
         ("0b52", "0"),
-        ("0b15", "0b1"),
-        ("3.14", "3.14"),
-        ("3.00", "3"),
-        ("0x3.14", "0x3"),
+        ("0b015", "0b01"),
     ]
 
     for x in xrange(len(tests)):
-        result, invalid = finite_automata.longest_prefix(tests[x][0])
+        result = finite_automata.longest_prefix(tests[x][0])
         compare_test(x, tests[x][1], result, verbose=True, inp=tests[x][0])
 
 def main(args):
@@ -64,6 +61,7 @@ if __name__ == '__main__':
         sys.stdout.write('"\'' + elem + '\'", ')
     sys.stdout.write('\b]\n')
     '''
+    validate_automata()
     if len(sys.argv) < 3:
         print 'Usage %s <file> <output>'
     else:

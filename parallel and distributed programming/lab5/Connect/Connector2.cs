@@ -11,7 +11,10 @@ namespace Connector {
             String uri = ((String)((Object[])ar.AsyncState)[1]);
             TaskCompletionSource<string> tcs = ((TaskCompletionSource<string>)((Object[])ar.AsyncState)[2]);
 
-            byte[] message = Encoding.ASCII.GetBytes("GET " + uri + " HTTP/1.1\r\n");
+            var ip = ((System.Net.IPEndPoint) socket.RemoteEndPoint).Address.ToString();
+
+            byte[] message = Encoding.ASCII.GetBytes("GET " + uri + " HTTP/1.1\r\nHost:" + ip +
+                             "\r\nConnection: keep-alive\r\nAccept: text/html\r\nUser-Agent: CSharpTests\r\n\r\n");
             Console.WriteLine("Mesage to send: {0}", Encoding.ASCII.GetString(message));
             IAsyncResult asyncSendResult = socket.BeginSend(message, 0, message.Length, SocketFlags.None, null, null);
             while(!asyncSendResult.IsCompleted) {
@@ -24,7 +27,7 @@ namespace Connector {
                 Thread.Sleep(1000);
             }
             socket.EndReceive(asyncReceiveResult);
-            tcs.SetResult(string.Format("Result(size: {1}): {0}", Encoding.ASCII.GetString(file), Encoding.ASCII.GetString(file).Length));
+            tcs.SetResult(string.Format("Result: {0}", Encoding.ASCII.GetString(file)));
             socket.EndConnect(ar);
         }
 

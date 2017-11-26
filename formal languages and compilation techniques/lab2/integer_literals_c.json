@@ -4,8 +4,7 @@
     {"label": "signum", "start": true, "end": false, "transitions":
       [
         {"elements": ["+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9",
-                    "-1", "-2", "-3", "-4", "-5", "-6", "-7", "-8", "-9"], "new_state": "deci0"},
-        {"elements": ["+0.", "-0."], "new_state": "frac0"}
+                    "-1", "-2", "-3", "-4", "-5", "-6", "-7", "-8", "-9"], "new_state": "deci0"}
       ]
     },
 
@@ -20,8 +19,7 @@
 
     {"label": "bin0", "start": false, "end": false, "transitions":
       [
-        {"elements": ["0"], "new_state": "omega"},
-        {"elements": ["1"], "new_state": "bin1"}
+        {"elements": ["0", "1"], "new_state": "bin1"}
       ]
     },
 
@@ -33,8 +31,7 @@
 
     {"label": "octa0", "start": false, "end": true, "transitions":
       [
-        {"elements": ["1", "2", "3", "4", "5", "6", "7"], "new_state": "octa1"},
-        {"elements": ["."], "new_state": "frac0"}
+        {"elements": ["1", "2", "3", "4", "5", "6", "7"], "new_state": "octa1"}
       ]
     },
 
@@ -46,8 +43,7 @@
 
     {"label": "hexa0", "start": false, "end": false, "transitions":
       [
-        {"elements": ["0"], "new_state": "omega"},
-        {"elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9",
+        {"elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
           "a", "b", "c", "d", "e", "f",
           "A", "B", "C", "D", "E", "F"], "new_state": "hexa1"
         }
@@ -66,17 +62,9 @@
     {"label": "deci0", "start": false, "end": true, "transitions":
       [
         {"elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "new_state": "deci0"},
-        {"elements": ["."], "new_state": "frac0"}
+        {"elements": ["u", "l", "ull", "ll", "ul"], "new_state": "omega"}
       ]
     },
-
-    {"label": "frac0", "start": false, "end": false, "transitions":
-      [
-        {"elements": ["1", "2", "3", "4", "5", "6", "7", "8", "9"], "new_state": "omega"},
-        {"elements": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], "new_state": "frac0"}
-      ]
-    },
-
     {"label": "omega", "start": false, "end": true, "transitions":
       [
 
