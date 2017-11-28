@@ -1,20 +1,18 @@
 import random
-
 import sys
-import time
 import datetime
 import threading
 
-from copy import deepcopy
-
+task_times = []
+wait_times = []
 
 class Polynom:
-    def __init__(self, z=None, size=0, **kwargs):
+    def __init__(self, p=None, z=None, size=0, **kwargs):
         if (z > 1):
             self.z = z
         if not z:
             self.z = z
-        self.p = [0 for x in xrange(size)]
+        self.p = [0 for x in xrange(size)] if p is None else p
         for k, v in kwargs.items():
             try:
                 if k[0] == 'x':
@@ -41,10 +39,10 @@ class Polynom:
     def split_at(self, pos):
         return Polynom(
                 z=self.z,
-                **{'x' + str(x-pos): self.p[x] for x in xrange(pos, len(self))}
+                p=self.p[pos:len(self)]
             ), Polynom(
                 z=self.z,
-                **{'x' + str(x): self.p[x] for x in xrange(pos)}
+                p=self.p[:pos]
             )
 
     def multiplication(self, power, value):
@@ -73,7 +71,7 @@ class Polynom:
         p = Polynom(z=self.z)
         for x in xrange(len(other)):
             if other.p[x] != 0:
-                p = p + self.multiplication(x, other.p[x])
+                p += self.multiplication(x, other.p[x])
         return p
 
     def __sub__(self, other):
@@ -84,18 +82,10 @@ class Polynom:
         return p
 
     def __rshift__(self, other):
-        p = Polynom()
-        for x in xrange(other, len(self)):
-            p.add(x - other, self.p[x])
-        return p
+        return Polynom(p=self.p[other:])
 
     def __lshift__(self, other):
-        p = Polynom()
-        for x in xrange(other):
-            p.add(x, 0)
-        for x in xrange(len(self)):
-            p.add(x + other, self.p[x])
-        return p
+        return Polynom(p=[0 for _ in xrange(other)] + self.p)
 
     def __str__(self):
         if not self.z:
@@ -157,13 +147,17 @@ def do_karatsuba_tasks(q):
         if node.is_leaf():
             node.complete(node.p1 * node.p2)
         else:
+            t = datetime.datetime.now()
             while not node.can_start():
                 pass
+            wait_times.append(datetime.datetime.now() - t)
+            t = datetime.datetime.now()
             node.complete(
                 (node.val(2) << (2*node.middle))
                 + ((node.val(1)-node.val(2)-node.val(0)) << (node.middle))
                 + node.val(0)
             )
+            task_times.append(datetime.datetime.now()-t)
 
 def dfs(g, p1, p2):
     if len(p1) == 1 or len(p2) == 1:
@@ -185,16 +179,31 @@ def dfs(g, p1, p2):
         )
     )
 
-def run_distributed(threads, tasks, function):
+def bfs(g):
+    l = []
+
+    q = [g.g[-1]]
+
+    while len(q):
+        node = q.pop(0)
+        l.append(node)
+        if not node.is_leaf():
+            for child in node.children:
+                q.append(child)
+    return l
+
+def run_distributed(threads, tasks, function, distributed_tasks=None):
 
     k = len(tasks) // threads
     mod = len(tasks) % threads
 
-    distributed_tasks = []
-    crt = 0
+    if distributed_tasks is None:
+        distributed_tasks = []
+        crt = 0
 
-    for t in xrange(threads):
-        distributed_tasks.append([tasks[x] for x in xrange(t, len(tasks), threads)])
+        for t in xrange(threads):
+            distributed_tasks.append([tasks[x] for x in xrange(t, len(tasks), threads)])
+
 
     th = None
     if threads == 1:
@@ -228,7 +237,10 @@ def karatsuba_multiplication(p1, p2, threads):
     g = Graph()
     dfs(g, p1, p2)
 
-    T = run_distributed(threads, g.g, do_karatsuba_tasks)
+    bfs_list = bfs(g)
+
+
+    T = run_distributed(threads, bfs_list[::-1], do_karatsuba_tasks)
 
     return g.g[-1].value, T
 
@@ -243,12 +255,21 @@ def random_polynom(size, z=None):
 
 def main(threads):
 
-    p1 = random_polynom(500)
-    p2 = random_polynom(500)
+    p1 = random_polynom(2500)
+    p2 = random_polynom(2500)
 
     r = p1*p2
     r1, T1 = normal_multiplication(p1, p2, threads)
     r2, T2 = karatsuba_multiplication(p1, p2, threads)
+
+    f = open('times.txt', 'w')
+
+    for t in wait_times:
+        f.write(str(t))
+        f.write('\n')
+    for t in task_times:
+        f.write(str(t))
+        f.write('\n')
 
     if len(r) < 10:
         print '==========Normal===========\n', r

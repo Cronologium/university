@@ -1,0 +1,42 @@
+Implementation of polynom multiplication
+
+1. Normal method - O(n*n)
+
+This is the classic algorithm: take each one from the first polynom and multiply it with the each one from the second polynom.
+
+Each task consists of multiplying a digit with a polynom on its corresponding position
+
+So, for example, by taking the numbers 13 and 11 as a big numbers in base 10, we have the following tasks: 10 * 11 and 3 * 11
+
+No syncronization needed, the result is added directly to the output polynom. And since all python operations are atomic, there is no need for locks or other synchronization means.
+
+2. Karatsuba method - O(n * log2(n))
+
+Pseudo code:
+
+procedure karatsuba(num1, num2)
+  if (num1 < 10) or (num2 < 10)
+    return num1*num2
+  /* calculates the size of the numbers */
+  m = max(size_base10(num1), size_base10(num2))
+  m2 = m/2
+  /* split the digit sequences about the middle */
+  high1, low1 = split_at(num1, m2)
+  high2, low2 = split_at(num2, m2)
+  /* 3 calls made to numbers approximately half the size */
+  z0 = karatsuba(low1,low2)
+  z1 = karatsuba((low1+high1),(low2+high2))
+  z2 = karatsuba(high1,high2)
+  return (z2*10^(2*m2))+((z1-z2-z0)*10^(m2))+(z0)
+
+The basic idea is to split the two polynoms into 2 parts each and reduce the number of digit multiplication.
+
+Each task is determined using a depth first search. As seen in the pseudocode, each call to the function can be represented either as a leaf in a tree (if any of the numbers is < 10) or has 3 children.
+
+Each node contains:
+p1 - the first polynom
+p2 - the second polynom
+children - the list of children of the current node, or nodes with p1 and p2: (low1, low2), (low1 + high1, low2 + high2), (high1, high2)
+value - the resulted value of the multiplication, initially set as None
+
+A task can start only if all values from its children are computed.

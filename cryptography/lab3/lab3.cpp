@@ -15,25 +15,6 @@ mpz_class exponentiation(mpz_class b, mpz_class power, mpz_class n) {
     return res;
 }
 
-vector<mpz_class> factorize1(mpz_class n) {
-    vector<mpz_class> output;
-    mpz_class t0 = sqrt(n);
-    for (mpz_class i = 1; i < t0; i += 1)
-    {
-        mpz_class t = t0 + i;
-        mpz_class s = sqrt((t * t) - n);
-        if (s * s == t) {
-            vector<mpz_class> lv = factorize1(t - s);
-            vector<mpz_class> rv = factorize1(t + s);
-            output.insert(output.end(), lv.begin(), lv.end());
-            output.insert(output.end(), rv.begin(), rv.end());
-            return output;
-        }
-    }
-    output.push_back(n);
-    return output;
-}
-
 int main(){
     unsigned n, a;
     ifstream fin("data.in");
@@ -43,7 +24,7 @@ int main(){
         fin >> a;
         vector<mpz_class> bases;
         bases.push_back(1);
-        for (mpz_class i = 2; i < a - 1; i += 1)
+        for (mpz_class i = 2; i <= a - 1; i += 1)
         {
             if (exponentiation(i, a - 1, a) == 1 && gcd(i, a) == 1)
             {
