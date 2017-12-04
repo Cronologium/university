@@ -55,9 +55,10 @@ def executer(v):
 
 
 def main():
-    for size in xrange(101, 1001):
+    for size in xrange(10, 11):
         print size
         v = [random.randint(1, 10) for _ in xrange(size)]
+        print v
         sp = [sum(v[:x]) for x in xrange(1, len(v)+1)]
         #print v
         v, c = executer(v)
@@ -72,7 +73,7 @@ def main():
                 ok = False
 
         if ok:
-            pass
+            print v
             #print 'OK!'
             #print 100.0 * c / (size * 2), '%'
         else:

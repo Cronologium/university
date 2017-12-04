@@ -1,4 +1,5 @@
 import Queue
+import random
 
 import sys
 import threading
@@ -37,7 +38,28 @@ def read_graph():
             g[y] = []
     return g
 
+def generate(n, m):
+    vertexes = {}
+    m = min(n * (n-1), m)
+    while m:
+        x, y, = random.randint(1, n), random.randint(1, n)
+        while x in vertexes and y in vertexes[x]:
+            x, y, = random.randint(1, n), random.randint(1, n)
+
+        m -= 1
+        if x not in vertexes:
+            vertexes[x] = [y]
+        else:
+            vertexes[x].append(y)
+
+    f = open('data.txt', 'w')
+    for x in vertexes:
+        for y in vertexes[x]:
+            f.write(str(x) + ' ' + str(y) + '\n')
+    f.close()
+
 def main(threads):
+    generate(10, 85)
     graph = read_graph()
     q = Queue.Queue()
     task = Task(graph, q)

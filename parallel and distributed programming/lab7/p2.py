@@ -160,7 +160,7 @@ def main():
     numbers = []
     #ns = '1 2 3 4 5 6 7 8 9'.split(' ')
     #numbers = [BigNumber(x) for x in ns]
-    n = 15
+    n = 7
     for x in xrange(n):
         size = random.randint(min_size, max_size)
         if size > 1:
@@ -171,12 +171,13 @@ def main():
             numbers.append(BigNumber(
                 number=''.join([DIGITS[random.randint(0, 9)]])
             ))
-    #print ' '.join([str(number) for number in numbers])
+    print ' '.join([str(number) for number in numbers])
     s = sum([int(str(number)) for number in numbers])
     tree = TaskTree(n)
     #print str(tree)
     st = tree.run(numbers)
-
+    #print numbers
+    print s
     if str(s) != str(st):
         print 'Expected: ', s, '\nGot: ', st
 
