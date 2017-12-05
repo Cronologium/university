@@ -5,6 +5,7 @@
 
     extern int yylex();
     extern int yyparse();
+    //extern void update();
     extern FILE *yyin;
     extern int lineNo;
     void yyerror(const char *s);
@@ -71,7 +72,7 @@ term: CONSTANT | IDENT | IDENT PERIOD IDENT
 operator: PLUS | MINUS | SLASH | TIMES | LSS | GTR | LEQ | GEQ | EQ | NEQ
 simple_type: INTSYM | FLOAT | CHARSYM
 
-if_stmt: IFSYM LPAREN expression RPAREN block_code ELSESYM block_code
+if_stmt: IFSYM LPAREN expression RPAREN block_code ELSESYM block_code | IFSYM LPAREN expression RPAREN block_code
 
 while_stmt: WHILESYM LPAREN expression RPAREN block_code
 
@@ -93,6 +94,7 @@ int main(int argc, char *argv[]) {
     while (!feof(yyin)) {
         yyparse();
     }
+    //update();
     printf("The file is lexically and sintactly correct!\n");
     return 0;
 }

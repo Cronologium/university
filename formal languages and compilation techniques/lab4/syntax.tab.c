@@ -70,11 +70,12 @@
 
     extern int yylex();
     extern int yyparse();
+    //extern void update();
     extern FILE *yyin;
     extern int lineNo;
     void yyerror(const char *s);
 
-#line 78 "syntax.tab.c" /* yacc.c:339  */
+#line 79 "syntax.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -166,7 +167,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 170 "syntax.tab.c" /* yacc.c:358  */
+#line 171 "syntax.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -415,7 +416,7 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  21
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  55
+#define YYNRULES  56
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  115
 
@@ -467,12 +468,12 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    54,    54,    55,    56,    56,    58,    58,    59,    60,
-      60,    62,    62,    63,    63,    63,    63,    63,    63,    64,
-      64,    66,    66,    66,    67,    67,    67,    68,    68,    68,
-      68,    69,    69,    69,    70,    70,    70,    71,    71,    71,
-      71,    71,    71,    71,    71,    71,    71,    72,    72,    72,
-      74,    76,    78,    78,    79,    79
+       0,    55,    55,    56,    57,    57,    59,    59,    60,    61,
+      61,    63,    63,    64,    64,    64,    64,    64,    64,    65,
+      65,    67,    67,    67,    68,    68,    68,    69,    69,    69,
+      69,    70,    70,    70,    71,    71,    71,    72,    72,    72,
+      72,    72,    72,    72,    72,    72,    72,    73,    73,    73,
+      75,    75,    77,    79,    79,    80,    80
 };
 #endif
 
@@ -547,10 +548,10 @@ static const yytype_uint8 yydefact[] =
       16,     0,     0,    23,     0,     0,     0,     0,     0,     0,
        0,     0,    22,     0,    12,    24,    13,    14,    18,     0,
       17,     0,     0,     0,    35,    34,     0,    28,    31,     0,
-      52,    34,    54,     0,     0,     0,     0,    53,    55,     8,
+      53,    34,    55,     0,     0,     0,     0,    54,    56,     8,
        9,     0,     0,    37,    38,    39,    40,    41,    42,    43,
       44,    45,    46,     0,     0,     0,     0,     0,    34,    26,
-      10,    36,    33,    32,    34,    29,     0,    20,     0,    51,
+      10,    36,    33,    32,    34,    29,     0,    20,    51,    52,
        2,     0,     0,    19,    50
 };
 
@@ -633,7 +634,7 @@ static const yytype_uint8 yyr1[] =
       50,    51,    51,    51,    52,    52,    52,    53,    53,    53,
       53,    54,    54,    54,    55,    55,    55,    56,    56,    56,
       56,    56,    56,    56,    56,    56,    56,    57,    57,    57,
-      58,    59,    60,    60,    61,    61
+      58,    58,    59,    60,    60,    61,    61
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -644,7 +645,7 @@ static const yytype_uint8 yyr2[] =
        1,     1,     2,     1,     2,     4,     4,     3,     3,     5,
        5,     1,     3,     3,     1,     1,     3,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       7,     5,     3,     3,     3,     3
+       7,     5,     5,     3,     3,     3,     3
 };
 
 
@@ -1321,7 +1322,7 @@ yyreduce:
   switch (yyn)
     {
       
-#line 1325 "syntax.tab.c" /* yacc.c:1646  */
+#line 1326 "syntax.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1549,7 +1550,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 81 "syntax.y" /* yacc.c:1906  */
+#line 82 "syntax.y" /* yacc.c:1906  */
 
 
 int main(int argc, char *argv[]) {
@@ -1565,6 +1566,7 @@ int main(int argc, char *argv[]) {
     while (!feof(yyin)) {
         yyparse();
     }
+    //update();
     printf("The file is lexically and sintactly correct!\n");
     return 0;
 }
