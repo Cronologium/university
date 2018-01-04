@@ -121,9 +121,9 @@ int do_statement_list(FILE* out, int i) {
                 break;
             case IFSYM:
                 do_eval(out, i+2);
-                fprintf(out, "cmp rax, 0\nje else%d:\n", i);
+                fprintf(out, "cmp rax, 0\nje else%d\n", i);
                 size = do_statement_list(out, i+4);
-                fprintf(out, "else%d:", i);
+                fprintf(out, "else%d:\n", i);
                 i += size + 4;
                 break;
             case PRINTF:

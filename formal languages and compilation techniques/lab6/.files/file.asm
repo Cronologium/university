@@ -39,6 +39,19 @@ call printf
 pop rbp
 pop rsi
 pop rdi
+mov rax, [a]
+cmp rax, 0
+je else46
+push rdi
+push rsi
+push rbp
+mov rsi, [a]
+mov rdi, msg_
+call printf
+pop rbp
+pop rsi
+pop rdi
+else46:
 push 0
 call exit
 
