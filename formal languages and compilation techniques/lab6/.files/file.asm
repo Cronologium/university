@@ -28,7 +28,7 @@ pop rsi
 pop rdi
 mov rax, qword [b]
 mov rax, [a]
-imul rax, [b]
+sbb rax, [b]
 mov [sum], rax
 push rdi
 push rsi
