@@ -64,6 +64,7 @@ struct ReadWriteMutex {
                 return false;
             }
             sharedLock.lock();
+            mode = SHARED_MODE;
             return true;
         }
 
@@ -72,26 +73,33 @@ struct ReadWriteMutex {
                 return false;
             }
             exclusiveLock.lock();
+            mode = EXCLUSIVE_MODE;
             return true;
         }
 
         void release_read() {
-            if (mode == SHARED_MODE && sharedLock.is_locked())
+            if (mode == SHARED_MODE && sharedLock.is_locked()) {
                 sharedLock.unlock();
+                if (!sharedLock.is_locked())
+                    mode = OFF_MODE;
+            }
         }
 
         void release_write() {
             if (mode == EXCLUSIVE_MODE && exclusiveLock.is_locked()) {
                 exclusiveLock.lock();
+                mode = OFF_MODE;
             }
         }
 
         void lock_read() {
             while (false == try_acquire_read());
+            mode = SHARED_MODE;
         }
 
         void lock_write() {
             while (false == try_acquire_write());
+            mode = EXCLUSIVE_MODE;
         }
 };
 
