@@ -16,8 +16,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="646">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -55,8 +55,8 @@
       <file leaf-file-name="StudentFileDataPersistenceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="850">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#364#365#0" expanded="true" />
@@ -154,6 +154,24 @@
             <path>
               <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
               <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
@@ -336,7 +354,7 @@
       <workItem from="1522151979540" duration="5661000" />
       <workItem from="1522581446288" duration="345000" />
       <workItem from="1522581809250" duration="31000" />
-      <workItem from="1522581858951" duration="3365000" />
+      <workItem from="1522581858951" duration="4179000" />
     </task>
     <servers />
   </component>
@@ -367,10 +385,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10196000" />
+    <option name="totallyTimeSpent" value="11010000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-16" width="3844" height="2082" extended-state="7" />
+    <frame x="-2" y="-16" width="3844" height="2082" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -742,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="850">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
@@ -754,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        <state relative-caret-position="646">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
     </entry>
