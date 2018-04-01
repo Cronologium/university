@@ -16,8 +16,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="1054">
+              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -55,10 +55,9 @@
       <file leaf-file-name="StudentFileDataPersistenceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#364#365#0" expanded="true" />
                 <element signature="e#442#443#0" expanded="true" />
               </folding>
@@ -132,6 +131,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 2)" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -157,24 +161,6 @@
             </path>
             <path>
               <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -196,7 +182,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -354,7 +340,7 @@
       <workItem from="1522151979540" duration="5661000" />
       <workItem from="1522581446288" duration="345000" />
       <workItem from="1522581809250" duration="31000" />
-      <workItem from="1522581858951" duration="4179000" />
+      <workItem from="1522581858951" duration="4792000" />
     </task>
     <servers />
   </component>
@@ -385,7 +371,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11010000" />
+    <option name="totallyTimeSpent" value="11623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-16" width="3844" height="2082" extended-state="6" />
@@ -465,7 +451,6 @@
         <state relative-caret-position="544">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
           </folding>
@@ -536,7 +521,6 @@
         <state relative-caret-position="544">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
           </folding>
@@ -607,7 +591,6 @@
         <state relative-caret-position="544">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
           </folding>
@@ -717,7 +700,6 @@
         <state>
           <caret column="43" selection-start-column="43" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
           </folding>
@@ -738,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/LaboratoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -760,20 +735,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="102">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#364#365#0" expanded="true" />
             <element signature="e#442#443#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="1054">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
         </state>
       </provider>
     </entry>
