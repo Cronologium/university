@@ -1,26 +1,26 @@
 import controller.LaboratoriesController;
 import model.Student;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-class StudentFileDataPersistenceTest {
+public class StudentFileDataPersistenceTest {
 
     private LaboratoriesController controller;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         controller = new LaboratoriesController("test_file.txt", null);
     }
 
     @Test
-    void testAddValidStudent() {
+    public void testAddValidStudent() {
         assertEquals(true, controller.saveStudent(new Student("test2021", "Test Test", 456)));
     }
 
     @Test
-    void testAddInvalidStudent() {
+    public void testAddInvalidStudent() {
         assertEquals(false, controller.saveStudent(new Student("ajahdgasjdhasgda", "asdjaskjdhask", 23874623)));
     }
 }
