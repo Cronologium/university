@@ -16,8 +16,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -340,7 +340,7 @@
       <workItem from="1522151979540" duration="5661000" />
       <workItem from="1522581446288" duration="345000" />
       <workItem from="1522581809250" duration="31000" />
-      <workItem from="1522581858951" duration="4792000" />
+      <workItem from="1522581858951" duration="5233000" />
     </task>
     <servers />
   </component>
@@ -369,17 +369,20 @@
     <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 14h 24m 59s.xml">
       <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 15h 53m 09s.xml">
+      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11623000" />
+    <option name="totallyTimeSpent" value="12064000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-16" width="3844" height="2082" extended-state="6" />
+    <frame x="-2" y="-16" width="3844" height="2082" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.21041214" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.21041214" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -387,11 +390,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29175705" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29175705" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26744792" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26744792" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Maven-2 Build" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -753,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="170">
+          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>
