@@ -16,8 +16,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="510">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -55,10 +55,12 @@
       <file leaf-file-name="StudentFileDataPersistenceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="680">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +96,8 @@
       <file leaf-file-name="LaboratoriesUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/LaboratoriesUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2958">
-              <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
+            <state relative-caret-position="452">
+              <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -154,6 +156,24 @@
               <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
               <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Prj_2_StudentsLaboratories" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Prj_2_StudentsLaboratories" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -186,7 +206,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.StudentFileDataPersistenceTest">
+  <component name="RunManager" selected="JUnit.StudentFileDataPersistenceTest.testAddInvalidStudent">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -223,6 +243,23 @@
       <option name="MAIN_CLASS_NAME" value="StudentFileDataPersistenceTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="StudentFileDataPersistenceTest.testAddInvalidStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Prj_2_StudentsLaboratories" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StudentFileDataPersistenceTest" />
+      <option name="METHOD_NAME" value="testAddInvalidStudent" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -305,9 +342,11 @@
       <item itemvalue="JUnit.StudentFileDataPersistence" />
       <item itemvalue="JUnit.StudentFileDataPersistenceTest.testAddValidStudent" />
       <item itemvalue="JUnit.StudentFileDataPersistenceTest" />
+      <item itemvalue="JUnit.StudentFileDataPersistenceTest.testAddInvalidStudent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StudentFileDataPersistenceTest.testAddInvalidStudent" />
         <item itemvalue="JUnit.StudentFileDataPersistenceTest" />
         <item itemvalue="JUnit.StudentFileDataPersistenceTest.testAddValidStudent" />
         <item itemvalue="JUnit.StudentFileDataPersistence" />
@@ -331,23 +370,11 @@
       <workItem from="1522581446288" duration="345000" />
       <workItem from="1522581809250" duration="31000" />
       <workItem from="1522581858951" duration="5854000" />
-      <workItem from="1522588459765" duration="342000" />
+      <workItem from="1522588459765" duration="1294000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StudentFileDataPersistence - 2018.03.27 at 15h 45m 31s.xml">
-      <configuration name="StudentFileDataPersistence" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentFileDataPersistenceTest - 2018.03.27 at 15h 46m 07s.xml">
-      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentFileDataPersistenceTest - 2018.03.27 at 15h 47m 21s.xml">
-      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StudentFileDataPersistenceTest - 2018.03.27 at 15h 49m 31s.xml">
-      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StudentFileDataPersistenceTest - 2018.03.27 at 15h 49m 40s.xml">
       <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
     </history-entry>
@@ -366,15 +393,29 @@
     <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 15h 57m 54s.xml">
       <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 16h 20m 38s.xml">
+      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 16h 21m 05s.xml">
+      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentFileDataPersistenceTest - 2018.04.01 at 16h 21m 17s.xml">
+      <configuration name="StudentFileDataPersistenceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StudentFileDataPersistenceTest_testAddInvalidStudent - 2018.04.01 at 16h 29m 57s.xml">
+      <configuration name="StudentFileDataPersistenceTest.testAddInvalidStudent" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13027000" />
+    <option name="totallyTimeSpent" value="13979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-16" width="3844" height="2082" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.21041214" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -382,7 +423,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29175705" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21529284" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -401,7 +442,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.21041214" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +474,8 @@
           <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -503,6 +545,8 @@
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -572,6 +616,8 @@
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,6 +687,8 @@
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -729,13 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LaboratoriesUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2958">
-          <caret line="99" column="62" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -749,6 +790,8 @@
           <caret column="43" selection-start-column="43" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,19 +827,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/LaboratoriesUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="510">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StudentFileDataPersistenceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="680">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
           </folding>
         </state>
       </provider>
