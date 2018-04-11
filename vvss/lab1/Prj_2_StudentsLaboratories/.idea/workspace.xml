@@ -60,8 +60,8 @@
       <file leaf-file-name="LaboratoryFileDataPersistenceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/LaboratoryFileDataPersistenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="782">
+              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,7 +144,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
     <option name="y" value="-12" />
     <option name="width" value="1920" />
@@ -427,7 +427,7 @@
       <workItem from="1522581809250" duration="31000" />
       <workItem from="1522581858951" duration="5854000" />
       <workItem from="1522588459765" duration="5605000" />
-      <workItem from="1522826227359" duration="1377000" />
+      <workItem from="1522826227359" duration="2150000" />
     </task>
     <servers />
   </component>
@@ -464,11 +464,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19667000" />
+    <option name="totallyTimeSpent" value="20440000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-16" width="3844" height="2082" extended-state="7" />
-    <editor active="true" />
+    <frame x="-2" y="-16" width="3844" height="2082" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -480,11 +479,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44197398" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44197398" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22734375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22734375" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Maven-2 Build" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -889,8 +888,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/LaboratoryFileDataPersistenceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="782">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
