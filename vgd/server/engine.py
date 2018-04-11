@@ -27,9 +27,9 @@ class Engine:
         self.enemy_objects = []
         from objects.spawners.enemy_ship_spawner import EnemyShipSpawner
         from objects.spawners.ufo_spawner import UfoSpawner
-        from objects.spawners.vertical_asteroid_spawner import VerticalAsteroidSpawner
+        from objects.spawners.asteroid_spawner import AsteroidSpawner
         self.spawners = [
-            VerticalAsteroidSpawner(60, 0, 0.025),
+            AsteroidSpawner(60, 0, 0.025),
             UfoSpawner(90, 0, 0),
             EnemyShipSpawner(100, 0, 0)
         ]
@@ -119,13 +119,19 @@ class Engine:
 
         lives = []
         scores = []
+        all_ded = True
 
         for x in range(len(self.player_ships)):
             if not self.player_ships[x].died:
                 self.scores[x] += Engine.SECOND_POINTS
-                lives.append(self.player_ships[x].lives)
-                scores.append(self.scores[x])
+                all_ded = False
+            lives.append(self.player_ships[x].lives)
+            scores.append(self.scores[x])
 
+
+        if all_ded:
+            print (all_ded, lives, scores)
+            return [], [], []
 
         for spawner in self.spawners:
             result = spawner.update(deepcopy(self.center))
@@ -139,7 +145,9 @@ class Engine:
         for entity in self.player_ships + self.friendly_objects + self.enemy_objects:
             obj = [int(entity.point.x - entity.radius / 2 - (self.center.x - Engine.WIDTH / 2)), Engine.HEIGHT - int(entity.point.y + entity.radius / 2 - (self.center.y - Engine.HEIGHT / 2))]
             if isinstance(entity, PlayerShip):
-                if entity.invulnerability_frames_left > 0 and (entity.invulnerability_frames_left // 5) % 2 == 0:
+                if entity.died:
+                    obj.append('')
+                elif entity.invulnerability_frames_left > 0 and (entity.invulnerability_frames_left // 3) % 2 == 0:
                     obj.append('')
                 else:
                     obj.append('ship')

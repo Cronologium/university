@@ -9,7 +9,10 @@ class EnemyShip(SetPathObject):
     def __init__(self, points, autofire_rate=None):
         self.autofire_rate = autofire_rate
         self.last_fired = 0
-        super().__init__(points, EnemyShip.RATE, EnemyShip.RADIUS, cycles=True)
+        rate = EnemyShip.RATE
+        if self.autofire_rate is None:
+            rate *= 1.5
+        super().__init__(points, rate, EnemyShip.RADIUS, cycles=True)
 
     def update(self):
         super().update()

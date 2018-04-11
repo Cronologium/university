@@ -106,40 +106,51 @@ class GameClient:
     def update(self):
         while not self.quit:
             size = Decoder.decode_int(self.server.recv(4))
-            items = []
-            for _ in range(size):
-                x = Decoder.decode_int(self.server.recv(4))
-                y = Decoder.decode_int(self.server.recv(4))
-                asset_str_size = Decoder.decode_int(self.server.recv(4))
-                asset = Decoder.decode_string(self.server.recv(asset_str_size))
-                items.append([x, y, asset])
-            lives = Decoder.decode_int(self.server.recv(4))
-            score = Decoder.decode_int(self.server.recv(4))
+            #print(size)
+            if size == 0:
+                score = Decoder.decode_int(self.server.recv(4))
+                place = Decoder.decode_int(self.server.recv(4))
+                self.screen.fill((0, 0, 0))
+                game_over_surface = self.font.render('GAME OVER', False, (255, 50, 50))
+                place_surface = self.font.render('Your place: {0} (score: {1})'.format(place, score), False, (50, 255, 50))
+                self.screen.blit(game_over_surface, (self.width / 2 - 150, self.height / 2 - 20))
+                self.screen.blit(place_surface, (self.width / 2 - 150, self.height / 2 + 20))
+            else:
+                items = []
+                for _ in range(size):
+                    x = Decoder.decode_int(self.server.recv(4))
+                    y = Decoder.decode_int(self.server.recv(4))
+                    asset_str_size = Decoder.decode_int(self.server.recv(4))
+                    asset = Decoder.decode_string(self.server.recv(asset_str_size))
+                    items.append([x, y, asset])
+                lives = Decoder.decode_int(self.server.recv(4))
+                score = Decoder.decode_int(self.server.recv(4))
 
-            self.screen.fill((0, 0, 0))
-            for item in items:
-                if item[2] in self.assets:
-                    self.screen.blit(self.assets[item[2]], (item[0], item[1]))
+                self.screen.fill((0, 0, 0))
+                for item in items:
+                    if item[2] in self.assets:
+                        self.screen.blit(self.assets[item[2]], (item[0], item[1]))
 
-            score_surface = self.font.render('Score: {0}'.format(score), False, (255, 255, 255))
-            lives_surface = self.font.render('Lives: {0}'.format(lives), False, (255, 255, 255))
-            self.screen.blit(score_surface, (0, 0))
-            self.screen.blit(lives_surface, (0, self.height - 45))
+                score_surface = self.font.render('Score: {0}'.format(score), False, (255, 255, 255))
+                lives_surface = self.font.render('Lives: {0}'.format(lives), False, (255, 255, 255))
+                self.screen.blit(score_surface, (0, 0))
+                self.screen.blit(lives_surface, (0, self.height - 45))
             pygame.display.flip()
 
-            flags = 0
-            if self.flags['up']:
-                flags |= UP
-            if self.flags['down']:
-                flags |= DOWN
-            if self.flags['left']:
-                flags |= LEFT
-            if self.flags['right']:
-                flags |= RIGHT
-            if self.flags['space']:
-                flags |= SHOOT
+            if size > 0:
+                flags = 0
+                if self.flags['up']:
+                    flags |= UP
+                if self.flags['down']:
+                    flags |= DOWN
+                if self.flags['left']:
+                    flags |= LEFT
+                if self.flags['right']:
+                    flags |= RIGHT
+                if self.flags['space']:
+                    flags |= SHOOT
 
-            self.server.sendall(Encoder.encode_int(flags))
+                self.server.sendall(Encoder.encode_int(flags))
 
 
     def close(self):

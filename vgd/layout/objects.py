@@ -1,3 +1,4 @@
+import random
 from copy import deepcopy
 
 from objects.asteroid import Asteroid
@@ -16,6 +17,7 @@ eight = [
 reverse_eight = eight[::-1]
 
 vertical_asteroid = Asteroid([Point(0, Engine.HEIGHT), Point(0, -Engine.HEIGHT)])
+diagonal_asteroid = Asteroid([Point(0, Engine.HEIGHT), Point(0, -Engine.HEIGHT)])
 ufo_horizontal = EnemyShip([Point(-Engine.WIDTH / 2 + 100, Engine.HEIGHT), Point(Engine.WIDTH / 2 - 100, Engine.HEIGHT)])
 enemy_ship_eight = EnemyShip(eight, autofire_rate=60)
 enemy_ship_reversed_eight = EnemyShip(reverse_eight, autofire_rate=60)
@@ -33,7 +35,9 @@ def GetVerticalAsteroid(point, position):
     return get_translated_copy(point, vertical_asteroid)
 
 def GetHorizontalUfo(point):
-    return get_translated_copy(point, ufo_horizontal)
+    obj = get_translated_copy(point, ufo_horizontal)
+    obj.set(random.randint(-Engine.WIDTH, Engine.WIDTH), obj.points[0].y)
+    return obj
 
 def GetEnemyShipEight(point):
     return get_translated_copy(point, enemy_ship_eight)
@@ -41,3 +45,11 @@ def GetEnemyShipEight(point):
 def GetEnemyShipReverseEight(point):
     return get_translated_copy(point, enemy_ship_reversed_eight)
 
+def GetDiagonalAsteroid(point):
+    inverted = random.randint(0, 1)
+    if inverted == 0:
+        inverted = -1
+    point.x += inverted * Engine.WIDTH / 2
+    obj = get_translated_copy(point, diagonal_asteroid)
+    obj.points[1].x = random.randint(-Engine.WIDTH, Engine.WIDTH)
+    return obj
