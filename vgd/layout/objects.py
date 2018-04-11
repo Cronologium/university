@@ -36,11 +36,13 @@ def GetVerticalAsteroid(point, position):
 
 def GetHorizontalUfo(point):
     obj = get_translated_copy(point, ufo_horizontal)
-    obj.set(random.randint(-Engine.WIDTH, Engine.WIDTH), obj.points[0].y)
+    obj.set(random.randint(-Engine.WIDTH / 2, Engine.WIDTH / 2), obj.points[0].y)
     return obj
 
 def GetEnemyShipEight(point):
-    return get_translated_copy(point, enemy_ship_eight)
+    obj = get_translated_copy(point, enemy_ship_eight)
+    obj.set(random.randint(-Engine.WIDTH / 2, Engine.WIDTH / 2), obj.points[0].y)
+    return obj
 
 def GetEnemyShipReverseEight(point):
     return get_translated_copy(point, enemy_ship_reversed_eight)

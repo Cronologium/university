@@ -4,6 +4,7 @@ from objects.lazer import Lazer
 from objects.object import Object
 
 
+
 class PlayerShip(Object):
     RADIUS = 40
     SPEED = 20
@@ -28,6 +29,8 @@ class PlayerShip(Object):
             self.move(PlayerShip.DIAGONAL_SPEED * x_mul, PlayerShip.DIAGONAL_SPEED * y_mul)
 
     def update(self):
+        from server.engine import Engine
+        self.point.y += Engine.CURRENT_SPEED
         if self.invulnerability_frames_left > 0:
             self.invulnerability_frames_left -= 1
         if self.cooldown > 0:

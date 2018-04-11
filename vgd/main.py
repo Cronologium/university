@@ -6,17 +6,17 @@ from communication.encoders import Encoder
 from server.gameserver import GameServer
 
 
-def main(how, port=5005):
+def main(how, host='localhost', port=5005, players=1):
     if how == 'client':
-        game_client = GameClient('localhost', int(port))
+        game_client = GameClient(host, int(port))
         game_client.connect()
         try:
             game_client.update()
         except KeyboardInterrupt:
             game_client.close()
     elif how == 'server':
-        game_server = GameServer('localhost', int(port), fps=60)
-        game_server.connect(1)
+        game_server = GameServer(host, int(port), fps=60)
+        game_server.connect(players)
         try:
             game_server.update()
         except KeyboardInterrupt:

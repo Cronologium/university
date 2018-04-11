@@ -12,6 +12,7 @@ class Engine:
     HEIGHT = 1080
     WIDTH = 800
     SPEED = 0.5
+    CURRENT_SPEED = 0.5
 
     SECOND_POINTS = 1 / 60
     ROCK_POINTS = 2
@@ -25,13 +26,14 @@ class Engine:
         self.scores = [0 for _ in range(players)]
         self.friendly_objects = []
         self.enemy_objects = []
+        Engine.CURRENT_SPEED = Engine.SPEED
         from objects.spawners.enemy_ship_spawner import EnemyShipSpawner
         from objects.spawners.ufo_spawner import UfoSpawner
         from objects.spawners.asteroid_spawner import AsteroidSpawner
         self.spawners = [
-            AsteroidSpawner(60, 0, 0.025),
-            UfoSpawner(90, 0, 0),
-            EnemyShipSpawner(100, 0, 0)
+            AsteroidSpawner(75, 0, 0.02),
+            UfoSpawner(90, 0, 0.02),
+            EnemyShipSpawner(100, 0, 0.02)
         ]
 
     def update_object_set(self, object_set):
@@ -73,7 +75,8 @@ class Engine:
                     self.friendly_objects.append(obj)
 
     def update(self):
-        self.center = self.center + Point(0, Engine.SPEED)
+        Engine.CURRENT_SPEED = ((self.center.y // Engine.HEIGHT) + 1) * Engine.SPEED
+        self.center = self.center + Point(0, Engine.CURRENT_SPEED)
 
         self.update_object_set(self.friendly_objects)
         self.update_object_set(self.enemy_objects)
@@ -165,6 +168,9 @@ class Engine:
                     obj.append('ufo')
                 else:
                     obj.append('enemyship')
+            else:
+                print (str(type(entity)))
+                obj.append('')
             object_list.append(obj)
         return object_list, lives, scores
 
